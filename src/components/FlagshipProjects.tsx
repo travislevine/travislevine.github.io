@@ -1,6 +1,6 @@
 "use client";
 
-import { Bike, Bot, Cpu, ExternalLink, Sprout } from "lucide-react";
+import { Bike, Bot, Cpu, ExternalLink, Play, Sprout } from "lucide-react";
 import { flagshipProjects, type FlagshipProject } from "@/data/profile";
 import { useGitHubRepos } from "@/lib/useGitHubRepos";
 import type { GitHubRepo } from "@/lib/github";
@@ -70,10 +70,24 @@ export function FlagshipProjects() {
                 <h3 className={`mt-5 font-semibold text-white ${featured ? "text-2xl" : "text-xl"}`}>{p.name}</h3>
                 <p className="mt-1 font-mono text-xs text-cyan-300/90">{p.tagline}</p>
                 <p className={`mt-4 leading-relaxed text-slate-400 ${featured ? "max-w-3xl" : ""}`}>{p.description}</p>
-                <div className="mt-auto flex flex-wrap gap-2 pt-5">
-                  {p.tags.map((t) => (
-                    <Tag key={t}>{t}</Tag>
-                  ))}
+                <div className="mt-auto pt-5">
+                  <div className="flex flex-wrap gap-2">
+                    {p.tags.map((t) => (
+                      <Tag key={t}>{t}</Tag>
+                    ))}
+                  </div>
+                  {p.demoUrl && (
+                    <a
+                      href={p.demoUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Watch ${p.name} demo on YouTube (opens in a new tab)`}
+                      className="group/demo mt-5 inline-flex items-center gap-2 rounded-lg border border-emerald-400/40 bg-emerald-400/10 px-4 py-2.5 text-sm font-medium text-emerald-300 transition hover:border-emerald-400/70 hover:bg-emerald-400/15 hover:text-emerald-200 hover:glow-emerald focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/50"
+                    >
+                      <Play className="h-4 w-4 fill-current transition group-hover/demo:scale-110" />
+                      Watch demo
+                    </a>
+                  )}
                 </div>
               </div>
             </article>

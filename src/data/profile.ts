@@ -26,6 +26,8 @@ export type FlagshipProject = {
   icon: "bike" | "sprout" | "cpu" | "bot";
   /** Lower-case fragments used to find a matching public GitHub repo (name/description/topics). */
   repoMatchers: string[];
+  /** Optional link to a demo video. */
+  demoUrl?: string;
 };
 
 export const flagshipProjects: FlagshipProject[] = [
@@ -38,6 +40,7 @@ export const flagshipProjects: FlagshipProject[] = [
     tags: ["Next.js", "PWA", "PowerSync", "Supabase", "Twilio", "Cursor"],
     icon: "bike",
     repoMatchers: ["bikepark", "bike-park", "bike_park"],
+    demoUrl: "https://youtu.be/EIDoi5-ILpc",
   },
   {
     id: "plant-watering",
@@ -48,6 +51,7 @@ export const flagshipProjects: FlagshipProject[] = [
     tags: ["IoT", "Sensors", "Embedded", "GUI", "Real-time"],
     icon: "sprout",
     repoMatchers: ["plant", "watering", "irrigation", "soil-moisture"],
+    demoUrl: "https://youtu.be/JZvOKNwW7vE?t=399",
   },
   {
     id: "rpi-remote",
@@ -68,6 +72,7 @@ export const flagshipProjects: FlagshipProject[] = [
     tags: ["C", "Robotics", "Sensor Fusion", "Control Systems"],
     icon: "bot",
     repoMatchers: ["robot", "line-follow", "linefollow", "line_follow", "racing"],
+    demoUrl: "https://youtu.be/5cnniMi59DI",
   },
 ];
 
