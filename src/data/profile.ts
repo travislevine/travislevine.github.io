@@ -7,14 +7,16 @@ export const profile = {
   name: "Travis Levine",
   title: "AI Automation & Software Engineer",
   headline:
-    "Final-year Computer Science student (6.78 GPA) building intelligent AI workflows, offline-first web apps, embedded systems, and self-hosted Linux infrastructure.",
-  bio: "Final-year Computer Science student at the University of the Sunshine Coast (previously at Deakin University) with a strong foundation in AI-driven automation, full-stack development, embedded systems, and cybersecurity. Proven track record delivering production AI and automation solutions in legal technology environments, building offline-first PWAs for local government (Sunshine Coast Council), and running a self-managed Linux homelab with Docker Compose and local LLM deployments.",
-  email: "t_l075@student.usc.edu.au",
+    "Computer Science graduate (6.78 GPA) building intelligent AI workflows, offline-first web apps, embedded systems, and self-hosted Linux infrastructure.",
+  bio: "Computer Science graduate from the University of the Sunshine Coast (previously studied at Deakin University) with a strong foundation in AI-driven automation, full-stack development, embedded systems, and cybersecurity. Proven track record delivering production AI and automation solutions in legal technology environments, building offline-first PWAs for local government (Sunshine Coast Council), and running a self-managed Linux homelab with Docker Compose and local LLM deployments.",
+  email: "sneakyplutosaturn@gmail.com",
   linkedin: "https://www.linkedin.com/in/travis-levine/",
   linkedinLabel: "linkedin.com/in/travis-levine",
   github: `https://github.com/${GITHUB_USERNAME}`,
   githubLabel: `github.com/${GITHUB_USERNAME}`,
   location: "Sunshine Coast, Queensland, Australia",
+  /** Shorter version used on the contact card. */
+  locationShort: "Aus, Sunshine Coast",
 };
 
 export type FlagshipProject = {
@@ -175,16 +177,38 @@ export const skillGroups: SkillGroup[] = [
   },
 ];
 
-export const certifications = [
-  { name: "Microsoft Certified: Azure AI Fundamentals", code: "AI-900", issuer: "Certiport" },
-  { name: "Information Technology (IT) Specialist Certification", code: "ITS", issuer: "Certiport" },
+export type Certification = {
+  name: string;
+  code: string;
+  issuer: string;
+  credentialLabel: string;
+  credentialId: string;
+  /** Optional public page where the credential can be checked. */
+  verifyUrl?: string;
+};
+
+export const certifications: Certification[] = [
+  {
+    name: "Microsoft Certified: Azure AI Fundamentals",
+    code: "AI-900",
+    issuer: "Certiport",
+    credentialLabel: "Credential ID",
+    credentialId: "2582f1b0-16e1-480f-8136-1d9f17aa8439",
+  },
+  {
+    name: "Information Technology (IT) Specialist Certification",
+    code: "ITS",
+    issuer: "Certiport",
+    credentialLabel: "Certiport verification code",
+    credentialId: "mp9c-DkqB",
+  },
 ];
 
 export const degrees = [
   {
     degree: "Bachelor of Computer Science",
     school: "University of the Sunshine Coast",
-    period: "Expected 2026",
+    period: "Completed 2026",
     detail: "Cumulative GPA: 6.78 / 7.00",
     current: true,
   },
@@ -197,10 +221,6 @@ export const degrees = [
   },
 ];
 
-export const currentCoursework = [
-  { code: "CSC303", name: "Cloud and DevOps" },
-  { code: "SEC300", name: "Cyber Security and Threat Intelligence", note: "building governance, risk & compliance (GRC) knowledge" },
-];
 
 export type Grade = "HD" | "D" | "CR";
 export type Unit = { code: string; name: string; mark: number; grade: Grade; uni: "UniSC" | "Deakin" };

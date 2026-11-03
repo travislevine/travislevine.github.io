@@ -40,7 +40,7 @@ export function Hero() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60 motion-reduce:animate-none" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
           </span>
-          Final-year Computer Science · UniSC · Graduating 2026
+          Computer Science Graduate · UniSC
         </motion.div>
 
         <motion.h1 {...fade(0.05)} className="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-6xl">

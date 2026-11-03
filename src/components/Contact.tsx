@@ -7,7 +7,7 @@ const items = [
   { label: "Email", value: profile.email, href: `mailto:${profile.email}`, Icon: Mail, external: false },
   { label: "LinkedIn", value: profile.linkedinLabel, href: profile.linkedin, Icon: LinkedInIcon, external: true },
   { label: "GitHub", value: profile.githubLabel, href: profile.github, Icon: GitHubIcon, external: true },
-  { label: "Location", value: profile.location, href: null, Icon: MapPin, external: false },
+  { label: "Location", value: profile.locationShort, href: null, Icon: MapPin, external: false },
 ];
 
 export function Contact() {
@@ -15,11 +15,11 @@ export function Contact() {
     <Reveal>
       <div className="card relative overflow-hidden p-8 sm:p-10">
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-emerald-400/[0.08] via-transparent to-cyan-400/[0.08]" />
-        <div className="relative grid gap-8 lg:grid-cols-2 lg:items-center">
+        <div className="relative grid gap-8 lg:grid-cols-[2fr_3fr] lg:items-center">
           <div>
             <h3 className="text-2xl font-semibold text-white sm:text-3xl">Let&apos;s build something useful.</h3>
             <p className="mt-3 max-w-md text-slate-400">
-              Interested in AI automation, full-stack or embedded work? I&apos;m always happy to chat about roles, projects and ideas.
+              Open to new work opportunities and collaboration.
             </p>
             <a
               href={`mailto:${profile.email}`}
@@ -35,7 +35,7 @@ export function Contact() {
                   <Icon className="h-4 w-4 text-emerald-300" />
                   <span className="min-w-0">
                     <span className="block font-mono text-[11px] uppercase tracking-wider text-slate-500">{label}</span>
-                    <span className="block truncate text-sm text-white">{value}</span>
+                    <span className="block text-sm text-white [overflow-wrap:anywhere]">{value}</span>
                   </span>
                 </>
               );

@@ -1,5 +1,5 @@
-import { BookOpen, GraduationCap } from "lucide-react";
-import { currentCoursework, degrees, sortedUnits, type Grade } from "@/data/profile";
+import { GraduationCap } from "lucide-react";
+import { degrees, sortedUnits, type Grade } from "@/data/profile";
 import { Reveal } from "./Reveal";
 
 const gradeStyles: Record<Grade, { badge: string; bar: string; label: string }> = {
@@ -31,21 +31,6 @@ export function Education() {
         ))}
       </div>
 
-      <Reveal>
-        <div className="card flex flex-col gap-4 border-cyan-400/25 p-5 sm:flex-row sm:items-center">
-          <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-cyan-300">
-            <BookOpen className="h-4 w-4" /> Currently studying
-          </span>
-          <div className="flex flex-wrap gap-3">
-            {currentCoursework.map((c) => (
-              <div key={c.code} className="rounded-lg border border-ink-600 bg-ink-900/80 px-3 py-2 text-sm">
-                <span className="font-mono text-cyan-300">{c.code}</span> <span className="text-white">{c.name}</span>
-                {c.note && <span className="block text-xs text-slate-500">{c.note}</span>}
-              </div>
-            ))}
-          </div>
-        </div>
-      </Reveal>
 
       <Reveal>
         <div className="card overflow-hidden">
