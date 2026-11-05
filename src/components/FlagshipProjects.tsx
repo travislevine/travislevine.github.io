@@ -1,6 +1,6 @@
 "use client";
 
-import { Bike, Bot, Cpu, ExternalLink, Play, Sprout } from "lucide-react";
+import { Bike, Bot, Cpu, ExternalLink, Play, ShoppingBag, Sprout } from "lucide-react";
 import { flagshipProjects, type FlagshipProject } from "@/data/profile";
 import { useGitHubRepos } from "@/lib/useGitHubRepos";
 import type { GitHubRepo } from "@/lib/github";
@@ -8,7 +8,7 @@ import { GitHubIcon } from "./BrandIcons";
 import { Reveal } from "./Reveal";
 import { Tag } from "./Tag";
 
-const icons = { bike: Bike, sprout: Sprout, cpu: Cpu, bot: Bot };
+const icons = { bike: Bike, sprout: Sprout, cpu: Cpu, bot: Bot, bag: ShoppingBag };
 
 /** Finds a public repo that looks like this project (name first, then topics/description). */
 function findRepo(project: FlagshipProject, repos: GitHubRepo[]): GitHubRepo | undefined {
@@ -76,6 +76,18 @@ export function FlagshipProjects() {
                       <Tag key={t}>{t}</Tag>
                     ))}
                   </div>
+                  {p.liveUrl && (
+                    <a
+                      href={p.liveUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Visit the ${p.name} live site (opens in a new tab)`}
+                      className="group/demo mt-5 inline-flex items-center gap-2 rounded-lg border border-emerald-400/40 bg-emerald-400/10 px-4 py-2.5 text-sm font-medium text-emerald-300 transition hover:border-emerald-400/70 hover:bg-emerald-400/15 hover:text-emerald-200 hover:glow-emerald focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/50"
+                    >
+                      <ExternalLink className="h-4 w-4 transition group-hover/demo:scale-110" />
+                      Visit site
+                    </a>
+                  )}
                   {p.demoUrl && (
                     <a
                       href={p.demoUrl}
