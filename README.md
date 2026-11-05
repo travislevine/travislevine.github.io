@@ -39,7 +39,7 @@ Repos are ranked by `scoreRepo()` in `src/lib/github.ts`:
 | --- | --- |
 | Description (25+ chars) | +30 |
 | Has topics | +20 |
-| Matches a keyword (ai, nextjs, supabase, automation, machine-learning, security, iot, embedded, docker, typescript, python, bikepark) | +25 |
+| Matches a keyword (ai, nextjs, supabase, automation, machine-learning, security, iot, embedded, docker, typescript, python, bikepark, stripe) | +25 |
 | Stars | ×15 each |
 | Forks | ×10 each |
 | Size > 50 KB | +10 |

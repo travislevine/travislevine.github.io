@@ -48,6 +48,7 @@ export const HIGH_SIGNAL_KEYWORDS = [
   "typescript",
   "python",
   "bikepark",
+  "stripe",
 ];
 
 const SIX_MONTHS_MS = 1000 * 60 * 60 * 24 * 182;

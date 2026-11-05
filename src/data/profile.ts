@@ -25,11 +25,13 @@ export type FlagshipProject = {
   tagline: string;
   description: string;
   tags: string[];
-  icon: "bike" | "sprout" | "cpu" | "bot";
+  icon: "bike" | "sprout" | "cpu" | "bot" | "bag";
   /** Lower-case fragments used to find a matching public GitHub repo (name/description/topics). */
   repoMatchers: string[];
   /** Optional link to a demo video. */
   demoUrl?: string;
+  /** Optional link to the live site. */
+  liveUrl?: string;
 };
 
 export const flagshipProjects: FlagshipProject[] = [
@@ -43,6 +45,17 @@ export const flagshipProjects: FlagshipProject[] = [
     icon: "bike",
     repoMatchers: ["bikepark", "bike-park", "bike_park"],
     demoUrl: "https://youtu.be/EIDoi5-ILpc",
+  },
+  {
+    id: "pickleball-sales",
+    name: "Pickleball Sales Storefront",
+    tagline: "E-commerce store · Client project",
+    description:
+      "Built an online store for Pickleball Sales, a Sunshine Coast retailer of Luzz pickleball paddles. Features an interactive 3D product hero, variant-aware product pages, a persistent cart and Stripe Checkout with server-side price validation and order webhooks. Set up the business's Stripe account for card, wallet and buy-now-pay-later payments. Leveraged Claude Code for certain aspects of the site's engineering.",
+    tags: ["Next.js", "TypeScript", "Stripe", "Tailwind CSS", "Framer Motion", "Vercel", "Claude Code"],
+    icon: "bag",
+    repoMatchers: ["pickleball"],
+    liveUrl: "https://pickleball-site-pi.vercel.app/",
   },
   {
     id: "plant-watering",
